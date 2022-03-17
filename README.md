@@ -11,7 +11,7 @@ A aplicação é um software de gerenciamento empresarial focados aos recursos d
 
 O propósito desse projeto é entregar um projeto de gerenciamento aos recursos humanos da empresa.
 
-![enter image description here]()(https://github.com/MarianaPaz1/Gerenciador-Empresarial/blob/main/SoulTech_FrontEnd/src/assets/login.png)
+![enter image description here](https://github.com/MarianaPaz1/Gerenciador-Empresarial/blob/main/SoulTech_FrontEnd/src/assets/login.png)
 
 ## Métodos necessários para utilização dessa aplicação web
 
