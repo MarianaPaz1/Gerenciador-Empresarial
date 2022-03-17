@@ -1,0 +1,57 @@
+.card{
+  display:flex;
+  margin: auto;
+  width: 100%;
+}
+
+
+.btn-primary {
+    color: #fff;
+    background-color:  #313131;
+    border-color:   #313131;
+}
+
+section {
+    padding: 60px 0;
+}
+
+
+
+
+
+.backside .card a {
+    font-size: 22px;
+    color:  #313131 !important;
+
+}
+
+.frontside .card .card-title,
+.backside .card .card-title {
+    color:  #313131 !important;
+    font-weight: bold;
+}
+
+.frontside .card .card-body img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+.togle-section-btn {
+  font-family: var(--body-font);
+  background-color: #4A276F;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+}
+
+
+.card-title, svg{
+  color: #4A276F;
+  margin-top: 20px;
+}
+.card{
+  background-color: #e1ccf8;
+  border-radius: 20px;
+  box-shadow: 10px 40px 50px rgba(0, 0, 0, 0.144);
+}

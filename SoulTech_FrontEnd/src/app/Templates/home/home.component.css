@@ -1,0 +1,40 @@
+*{
+  margin:0;
+  text-decoration: none;
+  background-image: url(/TESTE/src/assets/img/a1.png);
+}
+
+/* #contato {
+ border: solid 1px ;
+  background-color: rgba(0, 0, 0, 0.2);
+  background-size: cover;
+  opacity: 0.7;
+
+} */
+
+.container{
+  margin-bottom: 50px;
+
+}
+
+.img{
+  margin-top: 15%;
+   width: 130%;
+  height: 100%;
+}
+form {
+  margin-top: 15%;
+  background-color: #fff;
+  width: 120%;
+  /* height: 56.25rem; */
+  border-radius: 20px;
+  box-shadow: 10px 40px 50px rgba(0, 0, 0, 0.144);
+  margin-bottom: 20px;
+  text-align: center;
+}
+#redes{
+  margin-top: 20%;
+}
+button{
+  margin-top: 5%;
+}

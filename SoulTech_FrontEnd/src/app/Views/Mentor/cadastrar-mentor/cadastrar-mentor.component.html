@@ -1,0 +1,31 @@
+ <div class="registration-form">
+    <form>
+
+      <div class="form-icon">
+          <span><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+            <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+            <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+          </svg></span>
+      </div>
+      <h3 class="text-center my-3"> Cadastro de Mentor</h3>
+
+       <div class="form-group my-3">
+          <input type="text" class="form-control item"  placeholder="Nome do Mentor" [(ngModel)]="mentor.mentor_nome" name="mentor_nome" >
+      </div>
+      <div class="form-group">
+          <input type="text" class="form-control item" placeholder="Cargo que o mentor exerce" [(ngModel)]="mentor.mentor_cargo" name="mentor_cargo">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control item" placeholder="CPF do Mentor" [(ngModel)]="mentor.mentor_cpf"  name="CPF do Mentor">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Foto do Mentor</label>
+      <input type="file" class="form-control" [disabled]="!mentorCadastrado" (change)="subirFoto($event)">
+    </div>
+      <div class="form-group">
+          <button type="button"  (click)="cadastrarMentor()" class="btn btn-primary mx-3">Cadastrar</button>
+          <button type="reset"  class="btn btn-secondary mx-3">Cancelar</button>
+          <button type="reset"  routerLink="mentor/listaMentores"class="btn btn-secondary mx-3">Voltar</button>
+      </div>
+
+

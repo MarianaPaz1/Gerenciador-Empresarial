@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col-7">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Dados do Funcionário</h5>
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Nome do Funcionário</label>
+              <input type="text" readonly class="form-control" [(ngModel)]="funcionario.func_nome" name="func_nome">
+            </div>
+                  <div class="mb-3">
+              <label class="form-label">Cidade do Funcionário</label>
+              <input type="text" readonly class="form-control" [(ngModel)]="funcionario.func_cidade" name="func_cidade">
+            </div>
+            <button  routerLink="/listaGeralFuncionarios" class="btn btn-secondary mx-3">Cancelar</button>
+          </form>
+          <hr>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-5">
+      <div class="card">
+        <h5 class="card-title mx-3">Cargo do Funcionário: {{cargoEscolhido.id_cargo}} </h5>
+        <div class="card-body">
+
+          <div class="mb-3">
+            <label class="form-label">Nome do Cargo</label>
+            <input type="text" readonly class="form-control" [(ngModel)]="cargoEscolhido.ca_nome" name="ca_nome">
+          </div>
+
+          <hr>
+          <h5 class="card-title"> Escolha novo cargo para o funcionário:</h5>
+
+          <hr>
+          <select class="form-select" [(ngModel)]="cargoEscolhido" name="cargoEscolhido" (ngModelChange)="mostrarCargo()" >
+            <option *ngFor="let cargo of cargos" [ngValue]="cargo">
+              {{cargo.ca_nome}} - {{cargo.car_atribuicao}}
+            </option>
+          </select>
+          <button (click)="atribuirCargo()" class="btn btn-primary mx-3">Salvar</button>
+          <hr>
+          <div class="card">
+            <h5 class="card-title">Deixar Funcionário sem Cargo?
+              <button (click)="deixarFuncionarioSemCargo()" class="btn btn-secondary mx-3">Confirmar</button>
+            </h5>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

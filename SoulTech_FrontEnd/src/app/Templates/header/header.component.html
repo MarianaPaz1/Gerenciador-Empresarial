@@ -1,0 +1,44 @@
+<!-- Navbar-->
+<div style="background-color: #4A276F;">
+  <nav class="navbar navbar-expand-lg">
+
+    <div class="container-fluid justify-content-between">
+
+      <!-- Left elements -->
+      <div class="d-flex">
+        <!-- Brand -->
+        <a class="navbar-brand me-2 mb-1 d-flex align-items-center" routerLink="/home" >
+          <img src="https://img.icons8.com/external-soft-fill-juicy-fish/344/external-computer-information-technology-soft-fill-soft-fill-juicy-fish-5.png" height="40" alt=" Logo" loading="lazy" style="margin-top: 4px;" /> . • SoulTech •
+        </a>
+
+        <!-- Pesquisar aqui -->
+        <form class="input-group w-auto my-auto d-none d-sm-flex">
+          <input autocomplete="off" type="search" class="form-control rounded" placeholder="Pesquise aqui"
+            style="min-width: 125px;" />
+          <span class="input-group-text border-0 d-none d-lg-flex"><i class="fas fa-search"></i></span>
+        </form>
+      </div>
+
+
+  <!-- home -->
+      <div class="navbar-nav flex-row">
+        <li class="nav-item me-3 me-lg-1 active">
+        <ul class="navbar-nav flex-row d-none d-md-flex">
+            <a class="nav-link" routerLink="/home">
+              <span><i class="fas fa-home fa-lg"></i></span>
+            </a>
+          </ul>
+          </li>
+          <!-- dropdown -->
+          <div class="btn-group">
+            <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+              <i style="color:white;"class="fas fa-user"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark  dropdown-menu-lg-end" >
+              <li><button class="dropdown-item" routerLink="/cargo" type="button">Cargos</button></li>
+              <li><button class="dropdown-item" type="button" routerLink="/listaGeralFuncionarios">Funcionários</button></li>
+              <li><button class="dropdown-item"  routerLink="/mentor/listaMentores" type="button">Mentores</button></li>
+                       </ul>
+          </div>
+        </div>
+  <!-- Navbar -->

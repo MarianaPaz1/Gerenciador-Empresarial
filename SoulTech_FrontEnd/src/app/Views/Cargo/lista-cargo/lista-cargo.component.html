@@ -1,0 +1,113 @@
+<div style="margin-top: 35px;" class="text-center">
+
+  <h1> • SoulTech •</h1>
+  <p class="mb-4">A empresa está em expansão e você faz parte dessa evolução!</p>
+
+  <h4> <button routerLink="/cargo/cadastro" class="btn btn-primary togle-section-btn" type="button"
+      data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+   CADASTRE UM CARGO
+    </button></h4>
+
+  <div>
+
+    <!-- cards -->
+    <section id="team">
+      <div class="container">
+        <div class="row m-5">
+          <div *ngFor="let cargo of cargos" class="col-3 my-4">
+            <div class="image-flip">
+              <div class="mainflip flip-0">
+                <div class="frontside">
+                  <div class="card  h-100">
+                    <div class="card-body text-center">
+                      <p>
+                      </p>
+                      <h4 class="card-title">{{cargo.ca_nome}}</h4>
+                      <p class="card-text"> {{cargo.car_atribuicao}}</p>
+                      <button class="btn btn-light"  routerLink="/mentor/listaMentores">Mentor: {{cargo.mentor_nome}} </button>
+                      <ul class="list-inline">
+
+                        <li class="list-inline-item">
+                                               <a routerLink="/funcionario/{{cargo.id_cargo}}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                              class="bi bi-people-fill" viewBox="0 0 16 16">
+                              <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                              <path fill-rule="evenodd"
+                                d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z" />
+                              <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
+                            </svg>
+                          </a>
+
+
+                        </li>
+                        <li class="list-inline-item">
+                          <a class="social-icon text-xs-center" routerLink="/edicaoCargo/{{cargo.id_cargo}}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                              class="bi bi-pencil-square" viewBox="0 0 16 16">
+                              <path
+                                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                              <path fill-rule="evenodd"
+                                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                            </svg>
+                          </a>
+                        </li>
+
+                <!-- </div>
+                <div class="backside">
+                  <div class="card">
+                    <div class="card-body text-center mt-4">
+                      <h6 class="card-title">  #{{cargo.id_cargo}}</h6>
+                      <hr>
+                      <p class="card-title">Informações do Mentor</p>
+                      <p class="card-text">{{cargo.mentor_nome}}</p>
+                      <p>{{cargo.mentor_cargo}}</p>
+                      <p>{{cargo.mentor_foto}}</p> -->
+                      <!-- <p class="card-title">Descrição do Cargo</p>
+                  <p class="card-text">{{mentor.car_atribuicao}}</p> -->
+
+
+                        <!-- INICIO DO MODAL  -->
+                        <li class="list-inline-item">
+                          <a target="_blank" (click)="open(modalExcluir)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                              class="bi bi-trash" viewBox="0 0 16 16">
+                              <path
+                                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                              <path fill-rule="evenodd"
+                                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                            </svg>
+
+                            <ng-template #modalExcluir let-modal>
+                              <div class="modal-header">
+                                <h4 class="modal-title" id="excluir">Aviso</h4>
+                                <button type="button" class="close btn" aria-label="Close"
+                                  (click)="modal.dismiss('Cross click')">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <p>Deseja realmente excluir? Se sim, você será redirecionado a página de exclusão.</p>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary mx-3"
+                                  (click)="modal.close('Save click')">Cancelar</button>
+                                <button type="button" routerLink="/exclusaoCargo/{{cargo.id_cargo}}"
+                                  class="btn btn-danger" (click)="modal.close('Save click')">Excluir</button>
+                              </div>
+                            </ng-template>
+
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- </div>
+      </div> -->
+      <!-- </div> -->
+      </div>
+      </div>
+    </section>

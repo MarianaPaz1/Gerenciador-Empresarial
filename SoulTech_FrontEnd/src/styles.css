@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+  /* background-image: url(/src/assets/img/fundo.jpeg); */
+  /* background-image: linear-gradient(to bottom right, #e1ccf8 0%, #d63c6b 100%); */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.cor-mensagem{
+  background-color: black;
+  color:white;
+}

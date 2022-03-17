@@ -1,0 +1,47 @@
+<div class="registration-form">
+  <form>
+
+    <div class="form-icon">
+        <span><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-x-fill" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6.146-2.854a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z"/>
+        </svg></span>
+    </div>
+    <h3 class="text-center my-3"> Exclusão de Funcionário</h3>
+
+     <div class="form-group my-3">
+      <label class="form-label">Nome do Funcionário</label>
+      <input type="text" class="form-control" [(ngModel)]="funcionario.func_nome" name="func_nome">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Cidade do Funcionário</label>
+        <input type="text" class="form-control" [(ngModel)]="funcionario.func_cidade" name="func_cidade">
+    </div>
+    <div class="form-group my-3">
+          <button   (click)="open(modalExcluir)"class="btn btn-danger">Excluir</button>
+        <button  (click)="cancelarExclusao()" class="btn btn-secondary mx-3" >Cancelar</button>
+      </div>
+        <ng-template #modalExcluir let-modal>
+         <div class="modal-header">
+           <h4 class="modal-title" id="excluir">Aviso</h4>
+           <button type="button" class="close btn" aria-label="Close" (click)="modal.dismiss('Cross click')">
+             <span aria-hidden="true">&times;</span>
+           </button>
+          </div>
+
+         <div class="modal-body">
+           <p>Deseja realmente excluir?</p>
+         </div>
+
+         <div class="modal-footer">
+           <button  class="btn btn-secondary mx-3" type="button"   (click)="modal.close('Save click')" >Cancelar</button>
+           <button  type="button" class="btn btn-danger mx-3"   (click)="deleteFuncionario()" (click)="modal.close('Save click')">Excluir</button>
+           <!-- <button mat-raised-button type="button" (click)="excluirFunc();modal.close('Save click')" color="warn">Excluir</button> -->
+         </div>
+       </ng-template>
+       </form>
+  </div>
+
+
+
+
+
