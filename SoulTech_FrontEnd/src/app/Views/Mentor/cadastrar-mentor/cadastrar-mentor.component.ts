@@ -32,10 +32,12 @@ export class CadastrarMentorComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Método criado para redirecionar a rota.
   cancelarCadastro() {
     this.router.navigate([`mentor/mentorComCargo`])
   }
 
+  // Método criado para o cadastro do mentor.
   cadastrarMentor() {
     this.mentorService.cadastrarMentor(this.mentor).subscribe({
       next: () => {
@@ -54,15 +56,17 @@ export class CadastrarMentorComponent implements OnInit {
     })
   }
 
+
+  // Método criado para subir a foto c/ service.
   subirFoto(event: any) {
 
-    if (event.target.files && event.target.files[0]) { //se subiu um arquivo && se ele está na posição 0-já que vamos trabalhar só com uma foto
+    if (event.target.files && event.target.files[0]) { //subindo um arquivo que está na posição zero - apenas uma foto.
       this.foto = event.target.files[0]
       console.log(this.foto)
 
-      const formData = new FormData //permite que essa variável tenha vários atributos e conteúdo do atributo, como se fosse um objeto
+      const formData = new FormData
 
-      formData.append("foto", this.foto) // usamos o append para colocar esse novo atributo na variável
+      formData.append("foto", this.foto)
 
       const nome: string = this.mentor.mentor_nome + "-" + event.target.files[0].name
 

@@ -4,3 +4,4 @@ export interface Cargo{
   car_atribuicao: String
 
 }
+// Model é a interface criada para importar os campos de Cargo.

@@ -24,6 +24,8 @@ export class EdicaoCargoComponent implements OnInit {
     this.cargo.id_cargo = this.route.snapshot.paramMap.get('id');
     this.mostrarUmCargo();
   }
+
+  //Método criado para buscar um cargo.
   mostrarUmCargo() {
     this.cargoService
       .mostrarUmCargo(this.cargo.id_cargo)
@@ -32,7 +34,7 @@ export class EdicaoCargoComponent implements OnInit {
         console.log(this.cargo)
       });
   }
-
+//método criado de put - para editar o cargo.
   editarCargo() {
     this.cargoService.editarCargo(this.cargo).subscribe({
       complete: () => {
@@ -49,7 +51,7 @@ export class EdicaoCargoComponent implements OnInit {
     });
     this.router.navigate(['/cargo']);
   }
-
+// método criado para mudar a rota
   cancelarEdicao() {
     this.router.navigate(['/cargo']);
   }

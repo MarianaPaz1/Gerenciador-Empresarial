@@ -27,6 +27,8 @@ funcionario: Funcionario={
     // this.id_cargo = this.route.snapshot.paramMap.get('id_cargo')!
     this.buscarUmFuncionario();
   }
+  // Método criado para editar um funcionário.
+
   buscarUmFuncionario(){
     this.funcionarioService.buscarUmFuncionario(this.funcionario.id_funcionario).subscribe((resultado)=>{
       this.funcionario = resultado;
@@ -43,6 +45,8 @@ funcionario: Funcionario={
 // }
 
 //Antigo edite sem bug
+
+// método do criado para editar funcionário - com cargo ou sem.
 editarFuncionario() {
   if (this.id_cargo != 0) {
     this.funcionarioService.editarFunc(this.funcionario, this.funcionario.id_funcionario, this.id_cargo).subscribe({
@@ -70,6 +74,7 @@ editarFuncionario() {
     })
   }
 }
+// Método criado para redirecionar a página.
 cancelarEdicao(){
   this.router.navigate(['/listaGeralFuncionarios'])
 }

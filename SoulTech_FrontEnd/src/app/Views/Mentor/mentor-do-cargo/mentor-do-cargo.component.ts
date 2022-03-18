@@ -43,12 +43,14 @@ mentoresSemCargoEscolhido: any = []
     this.buscarMentoresSemCargo()
   }
 
+  // Método criado para buscar um mentor pelo id do cargo.
   buscarMentor(){
     this.mentorService.buscarUmMentor(this.id_cargo).subscribe(resultado =>{
       this.mentor = resultado
     })
   }
 
+  // buscar mentor do cargo pelo id do cargo.
   buscarMentorDoCargo(){
     this.mentorService.buscarMentorDoCargo(this.id_cargo).subscribe((resultado)=>{
 
@@ -66,7 +68,7 @@ mentoresSemCargoEscolhido: any = []
     })
   }
 
-
+// Método criado para buscar mentores sem cargo.
   buscarMentoresSemCargo(){
 
     this.mentorService.buscarMentoresSemCargo().subscribe((resultado)=>{
@@ -84,6 +86,8 @@ mentoresSemCargoEscolhido: any = []
 
   }
 
+
+  // Método criado para atribuir mentor ao cargo.
   atribuirMentor(){
 
     this.cargoService.mostrarUmCargo(this.id_cargo).subscribe((resultado)=>{
@@ -101,7 +105,7 @@ mentoresSemCargoEscolhido: any = []
 
 
   }
-
+// Método criado para deixar mentor sem cargo
   deixarCargoSemMentor(){
     this.cargoService.deixarCargoSemMentor(this.cargo, this.id_cargo,this.mentor.id_mentor).subscribe({
       complete: () =>  {this.cargoService.mensagem("O cargo agora está sem mentor")

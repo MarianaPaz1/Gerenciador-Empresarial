@@ -25,24 +25,32 @@ import { ListaFuncionarioDoCargoComponent } from './Views/Funcionario/lista-func
 
 const routes: Routes = [
   {path: "", redirectTo: "/home", pathMatch: "full"},
-  {path:"home", component: HomeComponent},
+   {path:"home", component: HomeComponent},
+
+   //Rotas dos cargos
   {path:"cargo", component: ListaCargoComponent},
   {path:"cargo/cadastro", component: CadastroCargoComponent},
   {path:"exclusaoCargo/:id", component: ExclusaoCargoComponent},
   {path:"edicaoCargo/:id", component: EdicaoCargoComponent},
+
+  // Rotas dos funcionários
   {path:"funcionarioCargo/:id_cargo", component:ListaFuncionarioComponent},
   {path:"funcionario/cadastrar", component: CadastroFuncionarioComponent},
   {path:"funcionarioExclusao/:id_funcionario", component: ExclusaoFuncionarioComponent },
   {path:"funcionario/edicao/:id_funcionario", component: EdicaoFuncionarioComponent},
   {path:"listaGeralFuncionarios", component: ListaGeralFuncionariosComponent},
+  {path:"atribuirCargo/:id_funcionario/:id_cargo", component: AtribuirCargoComponent},
+  {path:"funcionario/:id_cargo", component:ListaFuncionarioDoCargoComponent},
+
+  //Rotas do mentor
   {path:"mentor/listaMentores", component: ListaMentorComponent},
   {path:"mentorDoCargo/:id_cargo", component: MentorDoCargoComponent},
   {path:"atribuirCargo/:id_mentor", component: AtribuirCargoAoMentorComponent},
-  {path:"atribuirCargo/:id_funcionario/:id_cargo", component: AtribuirCargoComponent},
-  {path:"funcionario/:id_cargo", component:ListaFuncionarioDoCargoComponent},
   {path:"mentor/deletar/:id_mentor", component: ExclusaoMentorComponent},
   {path: "mentor/editar/:id_mentor/:id_cargo", component: EditarMentorComponent},
   {path:"mentor/cadastro", component:CadastrarMentorComponent},
+
+  // Rotas da bonificação
   {path:"bonificacao/cadastro/:id_mentor", component:CadastrarBonificacaoComponent},
   {path:"bonificacao/listaPorMentor/:id_mentor", component:ListaBonificacaoMentorComponent},
   {path:"bonificacao/edicao/:codigo/:id_mentor", component:EdicaoBonificacaoComponent},

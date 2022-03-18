@@ -8,10 +8,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   providedIn: 'root',
 })
 export class CargoService {
+ // A base URL utilizada no backend - definido no java que será utilizada para todos os caminhos.
   baseUrl: String = 'http://localhost:8080/empresa';
 
   constructor(private http: HttpClient, private snackBar: MatSnackBar) {}
-
+  // Métodos criados para conectar a front e back end pela url.
   mostrarTodosCargos(): Observable<Cargo[]> {
     const url = `${this.baseUrl}/cargo`;
     return this.http.get<Cargo[]>(url);
@@ -73,8 +74,8 @@ export class CargoService {
   // Método referente ao MatSnackBar do Material, para mostrar mensagem quando as funções de CRUD funcionarem
   mensagem(msg: string): void {
     this.snackBar.open(msg, 'X', {
-      duration: 3000,
-      horizontalPosition: 'right',
+      duration: 4000,
+      horizontalPosition: 'left',
       verticalPosition: 'top',
       panelClass: ['cor-mensagem'],
     });

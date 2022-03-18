@@ -37,10 +37,13 @@ export class EditarMentorComponent implements OnInit {
       this.id_cargo = this.route.snapshot.paramMap.get('id_cargo')!
       this.mostrarUmMentor();
     }
+
+    // Método criado para redirecionar a página.
     cancelarEdicao() {
       this.router.navigate([`mentor/listaMentores`]);
     }
 
+    // método criado para buscar um mentor por id.
     mostrarUmMentor() {
       this.mentorService
         .buscarUmMentor(this.mentor.id_mentor)
@@ -50,6 +53,7 @@ export class EditarMentorComponent implements OnInit {
         });
     }
 
+    //método criado para editar um mentor (com cargo ou sem)
     editarMentor() {
       if (this.id_cargo != 0) {
         this.mentorService.editarMentor(this.mentor, this.mentor.id_mentor, this.id_cargo).subscribe({
@@ -78,6 +82,7 @@ export class EditarMentorComponent implements OnInit {
       }
     }
 
+// Método criado para substituir a foto, caso seja necessário - com método post.
     subirFoto(event: any) {
 
       if (event.target.files && event.target.files[0]) {

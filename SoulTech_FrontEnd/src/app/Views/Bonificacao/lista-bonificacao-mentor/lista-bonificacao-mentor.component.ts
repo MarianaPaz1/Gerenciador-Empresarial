@@ -31,7 +31,7 @@ bonificacao:Bonificacao ={
     this.id_mentor = this.route.snapshot.paramMap.get('id_mentor')
     this.listarBonificacao()
   }
-
+// método criado para listar as bonificações de um mentor específico.
   listarBonificacao(){
     this.bonificacaoService.listaBonificacaoDoMentor(this.id_mentor).subscribe(resultado=>{
       this.bonificacoes = resultado
@@ -43,6 +43,8 @@ this.mentorService.buscarUmMentor(this.id_mentor).subscribe(resultado =>{
   this.nomeMentor = resultado.mentor_nome
 })
 }
+
+// Botão que quita a bonificação que está lá - muda o status;
 pagarBonificacao(codigo:any){
 
   this.bonificacaoService.buscarUmaBonificacao(codigo).subscribe(resultado =>{
@@ -58,6 +60,8 @@ pagarBonificacao(codigo:any){
   })
 
 }
+
+// botão que cancela a bonificação - muda o status.
 cancelarBonificacao(codigo:any){
 
   this.bonificacaoService.buscarUmaBonificacao(codigo).subscribe(resultado =>{

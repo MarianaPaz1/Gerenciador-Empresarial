@@ -11,9 +11,9 @@ import { Cargo } from '../Models/cargoModel';
 export class FuncionarioService {
 
   constructor(private http: HttpClient) { }
-
+// A base URL utilizada no backend - definido no java que será utilizada para todos os caminhos.
   baseUrl: string = "http://localhost:8080/empresa"
-
+  // Métodos criados para conectar a front e back end pela url.
   buscarTodosFuncionarios():Observable<any>{
     const url = `${this.baseUrl}/funcionario-cargo`
     return this.http.get<any>(url)

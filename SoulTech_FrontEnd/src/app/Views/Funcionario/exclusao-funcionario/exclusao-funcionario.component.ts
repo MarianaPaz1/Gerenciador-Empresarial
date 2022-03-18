@@ -30,12 +30,15 @@ export class ExclusaoFuncionarioComponent implements OnInit {
     this.funcionario.id_funcionario = this.route.snapshot.paramMap.get("id_funcionario")
     this.buscarUmFuncionario()
   }
+
+  // Método criado para buscar um funcionário.
   buscarUmFuncionario(){
     this.funcionarioService.buscarUmFuncionario(this.funcionario.id_funcionario).subscribe((resultado)=>{
       this. funcionario = resultado;
     })
   }
 
+  // Método criado para deletar um funcionário.
   deleteFuncionario(){
     this.funcionarioService.deleteFuncionario(this.funcionario.id_funcionario).subscribe({
       complete: () =>{ this.cargoService.mensagem("Funcionario deletado com sucesso"),
@@ -45,12 +48,13 @@ export class ExclusaoFuncionarioComponent implements OnInit {
   })
 }
 
+// Método criado para redirecionar a página.
 cancelarExclusao(){
   this.router.navigate(['/listaGeralFuncionarios'])
 }
 
 
-        ////////////MODAL
+        ////////////MODAL feito para criar aviso de exclusão
   // Função para abrir modal
   open(content: any) {
     //formato do modal

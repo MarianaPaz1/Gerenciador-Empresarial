@@ -7,9 +7,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class BonificacaoService {
+  // A base URL utilizada no backend - definido no java que será utilizada para todos os caminhos.
   baseUrl: String = 'http://localhost:8080/empresa'
   constructor( private http:HttpClient) { }
 
+  // Métodos criados para conectar a front e back end pela url.
   buscarUmaBonificacao(codigo:string):Observable<Bonificacao>{
     const url = `${this.baseUrl}/mentor/bonificacao/${codigo}`
     return this.http.get<Bonificacao>(url)

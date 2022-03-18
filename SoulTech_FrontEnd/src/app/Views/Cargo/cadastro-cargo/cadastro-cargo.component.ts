@@ -19,7 +19,7 @@ export class CadastroCargoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+// método criado para cadastrar cargo.
   cadastrarCargo(): void{
     this.cargoService.cadastrarCargo(this.cargo).subscribe((resultado)=>{
      this.cargoService.mensagem(" O cargo foi cadastrado com sucesso.")
@@ -28,7 +28,7 @@ export class CadastroCargoComponent implements OnInit {
     })
 
   }
-
+//método criado que substitui o routerLink na página, tem a funcionalidade de voltar para a rota quando acionado.
   cancelarCadastro(){
     this.router.navigate(['/cargo'])
   }

@@ -7,11 +7,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class MentorService {
-
+// A base URL utilizada no backend - definido no java que será utilizada para todos os caminhos.
   baseUrl: String = 'http://localhost:8080/empresa'
 
   constructor(private http: HttpClient) { }
 
+  // Métodos criados para conectar a front e back end pela url.
   buscarUmMentor(id_mentor: String):Observable<Mentor>{
     const url = `${this.baseUrl}/mentor/${id_mentor}`
     return this.http.get<Mentor>(url)

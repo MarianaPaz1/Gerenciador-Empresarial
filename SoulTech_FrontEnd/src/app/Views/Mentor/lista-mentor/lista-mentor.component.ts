@@ -17,7 +17,7 @@ mentores:any = []
   ngOnInit(): void {
     this.mostraMentoresComCargo()
   }
-
+// ForEach criado para buscar mentores com cargo, com a definição das suas posições no array.
   mostraMentoresComCargo(){
        this.mentorService.buscarMentoresComCargo().subscribe(resultado =>{
 

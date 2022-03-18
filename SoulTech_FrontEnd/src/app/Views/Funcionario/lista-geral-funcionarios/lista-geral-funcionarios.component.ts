@@ -23,7 +23,9 @@ export class ListaGeralFuncionariosComponent implements OnInit {
 
     this.buscarTodosFuncionarios()
   }
+// Método criado para realizar a busca de todos os funcionários e o preenchimento com  a posição do array.
 
+// Se a posição do array estiver errada a foto não aparece.
 
   buscarTodosFuncionarios(){
     this.funcionarioService.buscarTodosFuncionarios().subscribe(resultado =>{
@@ -71,7 +73,7 @@ export class ListaGeralFuncionariosComponent implements OnInit {
   }
 
 
-        ////////////MODAL
+        ////////////MODAL criado para avisar sobre a exclusão
   // Função para abrir modal
   open(content: any) {
     //formato do modal
@@ -83,7 +85,7 @@ export class ListaGeralFuncionariosComponent implements OnInit {
         this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
       }
     );
-  } //open
+  }
 
   // Função para fechar modal
   private getDismissReason(reason: any): string {
@@ -94,5 +96,5 @@ export class ListaGeralFuncionariosComponent implements OnInit {
     } else {
       return `with: ${reason}`;
     }
-  } //getDismissReason
+  }
 }

@@ -6,3 +6,4 @@ export interface Funcionario{
   func_cpf?: any
   func_foto:  String
 }
+// Model é a interface criada para importar os campos de Funcionario.

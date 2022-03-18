@@ -11,15 +11,15 @@
 
       <div class="mb-3">
         <label class="form-label">Descrição</label>
-        <input type="text" class="form-control" [(ngModel)]="bonificacao.bonificacao_descricao" name="bonificacao_descricao">
+        <input type="text" class="form-control" [readonly]="bonificacao.bonificacao_status == 'CANCELADO' || bonificacao.bonificacao_status == 'RECEBIDO'" [(ngModel)]="bonificacao.bonificacao_descricao" name="bonificacao_descricao">
       </div>
       <div class="mb-3">
         <label class="form-label">Data de Vencimento</label>
-        <input type="date" class="form-control" [(ngModel)]="bonificacao.bonificacao_data"  name="bonificacao_data" >
+        <input type="date" class="form-control" [readonly]="bonificacao.bonificacao_status == 'CANCELADO' || bonificacao.bonificacao_status == 'RECEBIDO'"[(ngModel)]="bonificacao.bonificacao_data"  name="bonificacao_data" >
       </div>
       <div class="mb-3">
         <label class="form-label">Valor</label>
-        <input type="text"  class="form-control" [(ngModel)]="bonificacao.bonificacao_valor" name="bonificacao_valor"  currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }">
+        <input type="text"  class="form-control" [readonly]="bonificacao.bonificacao_status == 'CANCELADO' || bonificacao.bonificacao_status == 'RECEBIDO'" [(ngModel)]="bonificacao.bonificacao_valor" name="bonificacao_valor"  currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }">
       </div>
       <div class="mb-3">
         <label class="form-label">Status</label>
@@ -28,7 +28,7 @@
       <div class="form-group">
         <div class="form-group my-3">
           <button  (click)="editarBonificacao()"  class="btn btn-light" style="background-color:#4A276F; color: white">Editar</button>
-        <button   routerLink="/bonificacao/listaPorMentor"class="btn btn-secondary mx-3" >Cancelar</button>
+        <button   routerLink="/mentor/listaMentores"class="btn btn-secondary mx-3" >Cancelar</button>
       </div>
         </div>
   </form>

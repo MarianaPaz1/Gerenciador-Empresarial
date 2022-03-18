@@ -31,12 +31,16 @@ export class ListaFuncionarioDoCargoComponent implements OnInit {
 
 
   }
+
+  // Método criado para buscar funcionário com o cargo pelo id.
   mostrarFuncionarioDoCargo(){
     this.funcionarioService.buscarFuncionarioCargo(this.id_cargo).subscribe(resultado =>{
       this.funcionarios = resultado
       console.log(this.funcionarios)
     })
   }
+
+  // Método criado para buscar um cargo pelo id.
     mostrarUmCargo(){
       this.cargoService.mostrarUmCargo(this.id_cargo).subscribe((resultado)=> {
         this.cargo = resultado

@@ -19,12 +19,14 @@ export class ListaFuncionarioComponent implements OnInit {
     // this.id_cargo = this.route.snapshot.paramMap.get('id_cargo')!;
     this.buscarFuncionario();
   }
+
+  // Método criado para buscar funcionário.
   buscarFuncionario(){
     this.funcionarioService.buscarTodosFuncionarios().subscribe((resultado)=>{
       this.funcionarios = resultado;
     })
   }
-
+// Método criado para redirecionar a rota.
   chamarFormularioCadastro(){
     this.router.navigate(['/funcionario/cadastro'])
   }

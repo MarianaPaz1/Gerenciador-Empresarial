@@ -33,14 +33,14 @@ export class ExclusaoMentorComponent implements OnInit {
     this.mentor.id_mentor = this.route.snapshot.paramMap.get('id_mentor')
     this.buscarUmMentor()
   }
-
+// Método criado para buscar um mentor pelo seu id.
   buscarUmMentor(){
     this.mentorService.buscarUmMentor(this.mentor.id_mentor).subscribe((resultado) =>{
       this.mentor = resultado
       console.log(this.mentor)
     })
   }
-
+// Método criado para excluir um mentor.
   excluirMentor(){
     this.mentorService.excluirMentor(this.mentor.id_mentor).subscribe({
       next: () => {
@@ -57,12 +57,12 @@ export class ExclusaoMentorComponent implements OnInit {
       }
     })
    }
-
+// Método criado para redirecionar a rota.
    cancelarExclusao() {
     this.router.navigate([`mentor/mentorComCargo`]);
   }
 
-        ////////////MODAL
+        ////////////MODAL para aviso de exclusão.
   // Função para abrir modal
   open(content: any) {
     //formato do modal

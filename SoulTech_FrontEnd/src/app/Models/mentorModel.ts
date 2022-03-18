@@ -6,3 +6,4 @@ export interface Mentor {
   mentor_cpf?: any;
   id_cargo?: any;
 }
+// Model é a interface criada para importar os campos de Mentor.

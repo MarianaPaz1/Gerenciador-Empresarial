@@ -43,14 +43,14 @@ export class ExclusaoBonificacaoComponent implements OnInit {
     this.mostrarBonificacao()
 
   }
-
+// método criado para buscar as bonificações.
   mostrarBonificacao(){
     this.bonificacaoService.buscarUmaBonificacao(this.codigo).subscribe(resultado =>{
       this.bonificacao = resultado
       this.bonificacao.bonificacao_status = resultado.bonificacao_status
     })
   }
-
+// método criado para excluir uma bonificação que é buscada pelo id e o cargo.
   excluirBonificacao(){
     this.bonificacaoService.excluirBonificacao(this.codigo).subscribe({
       complete: () => {alert("bonificação excluída com sucesso"),
@@ -64,7 +64,7 @@ export class ExclusaoBonificacaoComponent implements OnInit {
     this.bonificacao.bonificacao_status = this.statusEscolhidoNoSelect
 
   }
-          ////////////MODAL
+          ////////////MODAL criado para sinalizar que as informações serão excluídas - AVISO
   // Função para abrir modal
   open(content: any) {
     //formato do modal

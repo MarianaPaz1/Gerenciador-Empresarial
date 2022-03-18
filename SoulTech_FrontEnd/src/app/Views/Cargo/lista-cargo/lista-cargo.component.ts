@@ -20,7 +20,7 @@ closeResult: any = []
   ngOnInit(): void {
     this.mostrarTodosCargos();
   }
-
+//Método criado para mostrar os cargos e suas posições no array, sendo setado com o nome e a sua posição no forEach. A estrutura condicional deverá realizar uma ação para cada um deles.
   mostrarTodosCargos(){
     this.cargoService.buscarTodosCargos().subscribe(resultado =>{
       //this.turmas = resultado;
@@ -63,13 +63,6 @@ closeResult: any = []
 
   }
 
-  // navegarCadastroCargo(){
-  //   this.router.navigate(['/listaGeralFuncionarios'])
-  // }
-
-  deletarCargo(id:any){
-
-  }
 
 
 
@@ -86,11 +79,7 @@ closeResult: any = []
 
 
 
-
-
-
-
-  ////////////MODAL
+  ////////////MODAL para criar avisos de exclusão.
   // Função para abrir modal
   open(content: any) {
     //formato do modal

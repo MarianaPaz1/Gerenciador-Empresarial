@@ -6,3 +6,5 @@ export interface Bonificacao{
   bonificacao_valor: any
   id_mentor?: any
 }
+
+// Model é a interface criada para importar os campos de bonificação

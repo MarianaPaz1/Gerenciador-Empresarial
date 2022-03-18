@@ -25,9 +25,12 @@ export class CadastrarBonificacaoComponent implements OnInit {
 
   constructor(private location:Location, private cargoService:CargoService, private bonificacaoService: BonificacaoService, private route: ActivatedRoute, private router: Router) { }
 
+  // inicialização que através da paramMap tem acesso aos parametros da rota, nesse caso o mentor
   ngOnInit(): void {
   this.id_mentor = this.route.snapshot.paramMap.get('id_mentor')
   }
+
+  // Método criado para cadastrar bonificação
   cadastrarBonificacao(){
     this.bonificacaoService.CadastrarBonificacao(this.bonificacao, this.id_mentor).subscribe({
       complete: () => {this.cargoService.mensagem("Bonificação cadastrada com sucesso."), this.location.back()},

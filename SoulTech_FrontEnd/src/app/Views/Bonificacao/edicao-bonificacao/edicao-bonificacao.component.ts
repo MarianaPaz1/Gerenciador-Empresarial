@@ -30,7 +30,7 @@ ngOnInit(): void {
   this.id_mentor = this.route.snapshot.paramMap.get('id_mentor')
   this.buscarBonificacao()
 }
-
+// Método criado para buscar as bonificação.
 buscarBonificacao(){
   this.bonificacaoService.buscarUmaBonificacao(this.codigo).subscribe(resultado =>{
     this.bonificacao = resultado
@@ -40,6 +40,7 @@ buscarBonificacao(){
   })
 }
 
+// Método de put - criado para editar uma bonificação já existente.
 editarBonificacao(){
   this.bonificacaoService.editarBonificacao(this.bonificacao,this.codigo,this.id_mentor).subscribe({
     complete: () =>{alert("Bonificacao alterada com sucesso")

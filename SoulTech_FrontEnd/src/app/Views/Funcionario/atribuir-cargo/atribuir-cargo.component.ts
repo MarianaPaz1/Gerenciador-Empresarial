@@ -53,12 +53,14 @@ export class AtribuirCargoComponent implements OnInit {
   mostrarCargo(){
     console.log(this.cargoEscolhido)
   }
-
+// Método criado para buscar o funcionário pelo ID.
   mostrarFuncionario(){
     this.funcionarioService.buscarUmFuncionario(this.id_funcionario).subscribe(resultado =>{
       this.funcionario = resultado
     })
   }
+
+  //Método criado para buscar um cargo pelo id.
 
   buscarCargo(){
     this.cargoService.mostrarUmCargo(this.id_cargo).subscribe(resultado =>{
@@ -67,6 +69,7 @@ export class AtribuirCargoComponent implements OnInit {
     })
   }
 
+  // Método criado para vincular um funcionário ao cargo - um funcionário só pode ter um cargo, mas um cargo pode ter diversos funcionários.
   atribuirCargo(){
     this.funcionarioService.atribuirCargo(this.cargoEscolhido,this.id_funcionario).subscribe({
       complete: () => {  this.cargoService.mensagem("Funcionario cadastrado no cargo com sucesso")
@@ -80,6 +83,7 @@ export class AtribuirCargoComponent implements OnInit {
       });
   }
 
+  // Cargo que desvincula funcionário ao cargo.
   deixarFuncionarioSemCargo(){
     this.funcionarioService.deixarFuncionarioSemCargo (this.funcionario,this.id_funcionario).subscribe({
       complete: () => { this.cargoService.mensagem("Funcionário sem cargo")

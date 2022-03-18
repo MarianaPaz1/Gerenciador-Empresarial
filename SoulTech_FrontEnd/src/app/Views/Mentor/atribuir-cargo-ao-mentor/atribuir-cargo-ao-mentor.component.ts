@@ -44,12 +44,13 @@ export class AtribuirCargoAoMentorComponent implements OnInit {
     this.buscarMentorDoCargo()
     this.buscarCargoSemMentor()
   }
-
+// Método criado para buscar um mentor pelo id.
   buscarMentor(){
     this.mentorService.buscarUmMentor(this.id_mentor).subscribe(resultado =>{
       this.mentor = resultado
     })
   }
+  // Método criado para buscar um mentor com cargo através do seu id.
   buscarMentorDoCargo(){
     this.cargoService.buscarCargoDoMentor(this.id_mentor).subscribe(resultado =>{
 
@@ -64,7 +65,7 @@ export class AtribuirCargoAoMentorComponent implements OnInit {
 
     })
   }
-
+// Método criado para buscar mentor sem cargo.
   buscarCargoSemMentor(){
 
     this.cargoService.mostrarCargosSemMentor().subscribe((resultado)=>{
@@ -76,13 +77,13 @@ export class AtribuirCargoAoMentorComponent implements OnInit {
     })
 
   }
-
+// Método criado para escolha do cargo.
   escolherCargo(){
     console.log(this.cargoSemMentorEscolhido)
     this.cargo = this.cargoSemMentorEscolhido
 
   }
-
+  // Método criado para atribuir um cargo para o mentor.
   atribuirCargo(){
 
     this.mentorService.buscarUmMentor(this.id_mentor).subscribe((resultado)=>{
@@ -100,7 +101,7 @@ export class AtribuirCargoAoMentorComponent implements OnInit {
 
 
   }
-
+// Método criado para deixar cargo sem mentor.
   deixarCargoSemMentor(){
     this.cargoService.deixarCargoSemMentor(this.cargo, this.cargo.id_cargo,this.mentor.id_mentor).subscribe({
       complete: () => { this.cargoService.mensagem("O mentor está sem cargo")

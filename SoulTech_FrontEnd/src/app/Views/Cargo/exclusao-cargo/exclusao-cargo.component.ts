@@ -25,14 +25,14 @@ export class ExclusaoCargoComponent implements OnInit {
     this.cargo.id_cargo = this.route.snapshot.paramMap.get('id')
     this.mostrarUmCargo()
   }
-
+// Método criado para mostrar o cargo.
   mostrarUmCargo(){
     this.cargoService.mostrarUmCargo(this.cargo.id_cargo).subscribe((resultado)=> {
       this.cargo = resultado
       console.log(this.cargo)
     })
   }
-
+//método criado para exclusão de dados de um cargo, de acordo com o seu id.
   excluirCargo(){
     this.cargoService.excluirCargo(this.cargo.id_cargo).subscribe({
       next: () => {
@@ -49,11 +49,12 @@ export class ExclusaoCargoComponent implements OnInit {
       }
     })
   }
+  //Método criado para mudar a rota.
   cancelarExclusao(){
     this.router.navigate(['/cargo'])
   }
 
-          ////////////MODAL
+          ////////////MODAL criado para exibir arquivos de exclusão.
   // Função para abrir modal
   open(content: any) {
     //formato do modal
